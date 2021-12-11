@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ordered ArrayList implementation
 # Team NYAH: Ameer Alnasser + Turtleboi, Hugo Jenkins + Boary, Anthony Sun + Corn, Nakib Abedin + Joker
 
