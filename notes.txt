@@ -1,0 +1,6 @@
+DISCOS:
+* use <gang signs>
+* you can iterate through ArrayList using a for each loop - ArrayList is iterable
+
+QCC:
+* How can we make an object iterable?
