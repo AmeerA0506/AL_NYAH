@@ -1,6 +1,5 @@
 # AL_NYAH
-NYAH:: Nakib Abedin, Ameer Alnasser, Hugo Jenkins, Anthony Q. Sun
-
+NYAH:: Nakib Abedin, Ameer Alnasser, Hugo Jenkins, Anthony Sun
 ALTester:
 
 OrderedArrayList:
