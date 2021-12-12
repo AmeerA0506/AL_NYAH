@@ -1,3 +1,8 @@
+Team NYAH: Ameer Alnasser + Turtleboi, Hugo Jenkins + Boary, Anthony Sun + Corn, Nakib Abedin + Joker
+APCS
+L02 -- Creating an OrderedArrayList
+2021-12-11
+Time Spent: 2.5 hours
 DISCOS:
 * use <gang signs>
 * you can iterate through ArrayList using a for each loop - ArrayList is iterable
