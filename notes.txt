@@ -6,6 +6,8 @@ Time Spent: 2.5 hours
 DISCOS:
 * use <gang signs>
 * you can iterate through ArrayList using a for each loop - ArrayList is iterable
+* you need to import java.util.ArrayList before using ArrayLists
 
 QCC:
 * How can we make an object iterable?
+* How can we make our code more Robust?
