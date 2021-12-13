@@ -105,7 +105,6 @@ public class OrderedArrayList
     add(size(), newElement);
     
   }
-**/
 //helper method which searches
   public int binarySearch(ArrayList<Integer> arr,int startIndex, int endIndex, int target)
   {
@@ -135,7 +134,7 @@ public class OrderedArrayList
   }
 
    // main method solely for testing purposes
- /** public static void main( String[] args )
+  public static void main( String[] args )
   {
     -----v-------move-me-down-----------------v--------
     OrderedArrayList Franz = new OrderedArrayList();
