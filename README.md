@@ -3,7 +3,10 @@
 
 ### ALTester:
 We created an ArrayList of 23 random Integers and checked if it was in order. We then created an OrderedArrayList and added each element from the ArrayList to the OAL, which should keep the OAL in order.
-
+- isSorted(ArrayList)
+  - checks if List is sorted
+- arrayToString(ArrayList)
+  - creates a string representation of an array
 ### OrderedArrayList:
 - OrderedArrayList()
   - Constructor method that creates a new ArrayList of 23 integers by calling OrderedArrayList(23), an overloaded constructor which takes in length as a parameter
