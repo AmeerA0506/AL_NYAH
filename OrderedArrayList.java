@@ -133,39 +133,6 @@ public class OrderedArrayList
     }
   }
 
-  // main method solely for testing purposes
-  public static void main( String[] args )
-  {
-
-    OrderedArrayList Franz = new OrderedArrayList();
-
-    // testing linear search
-    for( int i = 0; i < 15; i++ )
-      Franz.addLinear( (int)( 50 * Math.random() ) );
-    System.out.println( Franz );
-
-    // ArrayList<Integer> _data = new ArrayList<Integer>(2);
-
-    // _data.add(0);
-    // _data.add(1);
-    // _data.add(2);
-    // _data.add(3);
-    // _data.add(5);
-    // System.out.println("b"+Franz.binarySearch(_data, 0, _data.size(), 1)+"..1");
-
-
-
-    // testing binary search
-    Franz = new OrderedArrayList();
-    for( int i = 0; i < 15; i++ ){
-      Franz.addBinary( (int)( 50 * Math.random() ) );
-    }
-
-    System.out.println( Franz );
-    /*-----v-------move-me-down-----------------v--------
-
-      =====^====================================^=========*/
-
-  }//end main()
+ 
 
 }//end class OrderedArrayList
