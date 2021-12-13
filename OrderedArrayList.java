@@ -85,7 +85,8 @@ public class OrderedArrayList
   // inserts newVal at the appropriate index
   // maintains ascending order of elements
   // uses a binary search to find appropriate index
-  public void addBinary(Integer newVal)
+ 
+ /**public void addBinary(Integer newVal)
   {
     if (size() == 0) {
         _data.add(0, newVal);
@@ -94,7 +95,7 @@ public class OrderedArrayList
 
     _data.add(binarySearch(_data, 0, size(), newVal), newVal);
 
-    /*
+    
     for (int i = 0; i < _data.size(); i++) {
         if(get(i) > newVal) {
             add(i, newVal);
@@ -102,9 +103,9 @@ public class OrderedArrayList
         }
     }
     add(size(), newElement);
-    */
+    
   }
-
+**/
 //helper method which searches
   public int binarySearch(ArrayList<Integer> arr,int startIndex, int endIndex, int target)
   {
@@ -133,6 +134,22 @@ public class OrderedArrayList
     }
   }
 
- 
+   // main method solely for testing purposes
+ /** public static void main( String[] args )
+  {
+    -----v-------move-me-down-----------------v--------
+    OrderedArrayList Franz = new OrderedArrayList();
+    // testing linear search
+    for( int i = 0; i < 15; i++ )
+      Franz.addLinear( (int)( 50 * Math.random() ) );
+    System.out.println( Franz );
+    // testing binary search
+    Franz = new OrderedArrayList();
+    for( int i = 0; i < 15; i++ ) 
+      Franz.addBinary( (int)( 50 * Math.random() ) );
+    System.out.println( Franz );
+      =====^====================================^=========
 
+  }//end main()
+**/
 }//end class OrderedArrayList
