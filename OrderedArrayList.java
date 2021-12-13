@@ -1,5 +1,5 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd00
+// Team NYAH: Ameer Alnasser + Turtleboi, Hugo Jenkins + Boary, Anthony Sun + Corn, Nakib Abedin + Joker
+// APCS pd06
 // Lab02
 // 2021-12-13
 
