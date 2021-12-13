@@ -23,7 +23,7 @@ public class OrderedArrayList
   // default constructor
   // initializes instance variables
   public OrderedArrayList() {
-      _data = new ArrayList<Integer>(23);
+      _data = new ArrayList<Integer>();
   }
 
   public String toString()
@@ -84,7 +84,7 @@ public class OrderedArrayList
         return;
     }
 
-    _data.add(binarySearch(_data, 0, size()-1, newVal), newVal);
+    _data.add(binarySearch(_data, 0, size(), newVal), newVal);
 
     /*
     for (int i = 0; i < _data.size(); i++) {
@@ -97,18 +97,77 @@ public class OrderedArrayList
     */
   }
 
-  public int binarySearch(ArrayList<Integer> arr,int startIndex, int lastIndex, int target)
+  public int binarySearch(ArrayList<Integer> arr,int startIndex, int endIndex, int target)
   {
-  if (arr.size() == 1) return arr.get(startIndex);
+    // base case:
+    if (endIndex-startIndex == 1) { //if one element left in array
+      return startIndex; //return that index
+    }
 
-  int mid = (startIndex + lastIndex) / 2;
-  if (target < arr.get(mid)){
-    return binarySearch(arr, startIndex, mid-1, target);
-  }else{
-    return binarySearch(arr, mid, lastIndex, target);
+    int mid = (startIndex + endIndex) / 2;
+    
+    // System.out.println("Working array: {"+arr.get(startIndex)+"..."+arr.get(endIndex-1)+"}");
+    // System.out.println("Range: ["+startIndex+","+endIndex+")");
+    // System.out.println("mid:"+mid);
+    
+
+    if (arr.get(mid-1) < target) {
+      // System.out.println("Target is greater than everything before it");
+      return binarySearch(arr, mid, endIndex, target);
+    }
+    else {
+      // System.out.println("target is less than or equal to everything after it");
+      return binarySearch(arr, startIndex, mid, target);
+    }
+
+    
+  // if (endIndex-startIndex == 1) return startIndex;
+
+  // int mid = (startIndex + endIndex) / 2;
+  // System.out.println(arr.get(startIndex)+","+arr.get(endIndex-1));
+  // System.out.println(mid);
+  // if (target == arr.get(mid)) {
+  //   return mid;
+  // }
+  // if (target < arr.get(mid)){
+  //   return binarySearch(arr, startIndex, mid, target);
+  // }
+  // return binarySearch(arr, mid+1, endIndex, target);
+  
+
   }
 
-  }
+/*
+target: 4
+{0,1,2,3,5}
+diff: 3
+mid: 2
+4>mid:
+  {0,1,2,{3,5}}
+  diff: 1
+  mid:3
+  return 4 (expected 4)
+    
+
+target: 2
+{0,1,2,3,5}
+mid: 2
+2=mid:
+  return 2; (expected 2)
+  
+target: 2
+{0,1,2,3,5}
+mid: 2
+2<=mid:
+  {{0,1,2},3,5}
+  diff: 2
+  mid: 1
+  2>mid:
+    {0,1,{2},3,5}
+    mid=2
+
+*/
+
   // main method solely for testing purposes
   public static void main( String[] args )
   {
@@ -119,6 +178,17 @@ public class OrderedArrayList
     for( int i = 0; i < 15; i++ )
       Franz.addLinear( (int)( 50 * Math.random() ) );
     System.out.println( Franz );
+
+    // ArrayList<Integer> _data = new ArrayList<Integer>(2);
+
+    // _data.add(0);
+    // _data.add(1);
+    // _data.add(2);
+    // _data.add(3);
+    // _data.add(5); 
+    // System.out.println("b"+Franz.binarySearch(_data, 0, _data.size(), 1)+"..1");
+
+
 
     // testing binary search
     Franz = new OrderedArrayList();
