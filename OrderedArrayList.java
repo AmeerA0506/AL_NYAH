@@ -64,10 +64,10 @@ public class OrderedArrayList
   // uses a linear search to find appropriate index
   public void addLinear(Integer newVal)
   {
-    if (size() == 0) {
-        _data.add(0, newVal);
-        return;
-    }
+    // if (size() == 0) {
+    //     _data.add(0, newVal);
+    //     return;
+    // }
 
     for (int i = 0; i < _data.size(); i++) {
         if(get(i) > newVal) {
@@ -151,8 +151,16 @@ public class OrderedArrayList
 
     // testing binary search
     Franz = new OrderedArrayList();
-    for( int i = 0; i < 15; i++ )
+    for( int i = 0; i < 15; i++ ){
       Franz.addBinary( (int)( 50 * Math.random() ) );
+    }
+
+    //bandaid fix
+    int last = Franz.get(Franz.size()-1);
+    Franz.remove(Franz.size()-1);
+    Franz.addBinary(last);
+    
+
     System.out.println( Franz );
     /*-----v-------move-me-down-----------------v--------
 
