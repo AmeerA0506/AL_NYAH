@@ -105,12 +105,13 @@ public class OrderedArrayList
 //helper method which searches
   public int binarySearch(ArrayList<Integer> arr,int startIndex, int endIndex, int target)
   {
+    int mid = (startIndex + endIndex) / 2;
+
     // base case:
     if (endIndex-startIndex == 1) { //if one element left in array
       return startIndex; //return that index
     }
 
-    int mid = (startIndex + endIndex) / 2;
 
     // System.out.println("Working array: {"+arr.get(startIndex)+"..."+arr.get(endIndex-1)+"}");
     // System.out.println("Range: ["+startIndex+","+endIndex+")");
