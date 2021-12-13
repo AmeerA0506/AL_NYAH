@@ -18,5 +18,5 @@ We created an ArrayList of random Integers and checked if it was in order. We th
   - call ArrayList's remove function, should not change functionality
 - add-at-index(int x, val)
   - disregards index, calls add(x)
--size()
+- size()
   - returns size method of ArrayList
