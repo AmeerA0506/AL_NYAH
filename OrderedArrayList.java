@@ -7,7 +7,6 @@
  * class OrderedArrayList
  * wrapper class for ArrayList
  * maintains invariant that elements are ordered (ascending)
- * (SKELETON)
  **********************************************/
 
 
