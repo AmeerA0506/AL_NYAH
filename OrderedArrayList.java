@@ -111,15 +111,17 @@ public class OrderedArrayList
     }
 
     int mid = (startIndex + endIndex) / 2;
-    
+
     // System.out.println("Working array: {"+arr.get(startIndex)+"..."+arr.get(endIndex-1)+"}");
     // System.out.println("Range: ["+startIndex+","+endIndex+")");
     // System.out.println("mid:"+mid);
-    
+
 
     if (arr.get(mid-1) < target) {
       // System.out.println("Target is greater than everything before it");
       return binarySearch(arr, mid, endIndex, target);
+    } else if ( arr.get(mid-1) == target){
+      return mid;
     }
     else {
       // System.out.println("target is less than or equal to everything after it");
@@ -144,7 +146,7 @@ public class OrderedArrayList
     // _data.add(1);
     // _data.add(2);
     // _data.add(3);
-    // _data.add(5); 
+    // _data.add(5);
     // System.out.println("b"+Franz.binarySearch(_data, 0, _data.size(), 1)+"..1");
 
 
@@ -159,7 +161,7 @@ public class OrderedArrayList
     int last = Franz.get(Franz.size()-1);
     Franz.remove(Franz.size()-1);
     Franz.addBinary(last);
-    
+
 
     System.out.println( Franz );
     /*-----v-------move-me-down-----------------v--------
