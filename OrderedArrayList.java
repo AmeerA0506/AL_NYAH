@@ -23,9 +23,13 @@ public class OrderedArrayList
   // default constructor
   // initializes instance variables
   public OrderedArrayList() {
-      _data = new ArrayList<Integer>(23);
+      OrderedArrayList(23);
   }
-
+// overloaded constructor which helps to initialize instance variable
+  public OrderedArrayList(int length) {
+      _data = new ArrayList<Integer>(length);
+  }
+// creates String version of ArrayList
   public String toString()
   {
     if (size() ==0) return "{}";
@@ -36,18 +40,20 @@ public class OrderedArrayList
     }
     return "{" + out.substring(1) + "}";
   }
-
+// calls remove function from ArrayList
   public Integer remove( int i )
   {
     Integer x = _data.get(i);
     _data.remove(i);
     return x;
   }
+// calls size function from ArrayList
 
   public int size()
   {
     return _data.size();
   }
+// calls get function from ArrayList
 
   public Integer get( int i )
   {
@@ -96,7 +102,7 @@ public class OrderedArrayList
     add(size(), newElement);
     */
   }
-
+//helper method which searches
   public int binarySearch(ArrayList<Integer> arr,int startIndex, int lastIndex, int target)
   {
   if (arr.size() == 1) return arr.get(startIndex);
