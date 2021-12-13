@@ -22,8 +22,8 @@ public class OrderedArrayList
 
   // default constructor
   // initializes instance variables
-  public OrderedArrayList(int length) {
-      _data = new ArrayList<Integer>(length);
+  public OrderedArrayList() {
+      _data = new ArrayList<Integer>(23);
   }
 
   public String toString()
@@ -39,7 +39,7 @@ public class OrderedArrayList
 
   public Integer remove( int i )
   {
-    Integer x = _data[i];
+    Integer x = _data.get(i);
     _data.remove(i);
     return x;
   }
@@ -60,18 +60,17 @@ public class OrderedArrayList
   public void addLinear(Integer newVal)
   {
     if (size() == 0) {
-        add(0, newElement);
-        return true;
+        _data.add(0, newVal);
+        return;
     }
 
     for (int i = 0; i < _data.size(); i++) {
-        if(get(i) > newElement) {
-            add(i, newElement);
-            return true;
+        if(get(i) > newVal) {
+            _data.add(i, newVal);
+            return;
         }
     }
-    add(size(), newElement);
-    return true;
+    _data.add(size(), newVal);
 
   }
 
@@ -80,13 +79,39 @@ public class OrderedArrayList
   // uses a binary search to find appropriate index
   public void addBinary(Integer newVal)
   {
+    if (size() == 0) {
+        _data.add(0, newVal);
+        return;
+    }
 
+    _data.add(binarySearch(_data, 0, size()-1, newVal), newVal);
+
+    /*
+    for (int i = 0; i < _data.size(); i++) {
+        if(get(i) > newVal) {
+            add(i, newVal);
+            return;
+        }
+    }
+    add(size(), newElement);
+    */
   }
 
+  public int binarySearch(ArrayList<Integer> arr,int startIndex, int lastIndex, int target)
+  {
+  if (arr.size() == 1) return arr.get(startIndex);
+
+  int mid = (startIndex + lastIndex) / 2;
+  if (target < arr.get(mid)){
+    return binarySearch(arr, startIndex, mid-1, target);
+  }else{
+    return binarySearch(arr, mid, lastIndex, target);
+  }
+
+  }
   // main method solely for testing purposes
   public static void main( String[] args )
   {
-    /*-----v-------move-me-down-----------------v--------
 
     OrderedArrayList Franz = new OrderedArrayList();
 
@@ -100,6 +125,8 @@ public class OrderedArrayList
     for( int i = 0; i < 15; i++ )
       Franz.addBinary( (int)( 50 * Math.random() ) );
     System.out.println( Franz );
+    /*-----v-------move-me-down-----------------v--------
+
       =====^====================================^=========*/
 
   }//end main()
