@@ -1,5 +1,5 @@
-// Clyde "Thluffy" Sinclair
-// APCS pd00
+// Team NYAH: Ameer Alnasser + Turtleboi, Hugo Jenkins + Boary, Anthony Sun + Corn, Nakib Abedin + Joker
+// APCS pd06
 // Lab02
 // 2021-12-13
 
@@ -7,7 +7,6 @@
  * class OrderedArrayList
  * wrapper class for ArrayList
  * maintains invariant that elements are ordered (ascending)
- * (SKELETON)
  **********************************************/
 
 
@@ -25,7 +24,11 @@ public class OrderedArrayList
   public OrderedArrayList() {
       _data = new ArrayList<Integer>();
   }
-
+// overloaded constructor which helps to initialize instance variable
+  public OrderedArrayList(int length) {
+      _data = new ArrayList<Integer>(length);
+  }
+// creates String version of ArrayList
   public String toString()
   {
     if (size() ==0) return "{}";
@@ -36,18 +39,20 @@ public class OrderedArrayList
     }
     return "{" + out.substring(1) + "}";
   }
-
+// calls remove function from ArrayList
   public Integer remove( int i )
   {
     Integer x = _data.get(i);
     _data.remove(i);
     return x;
   }
+// calls size function from ArrayList
 
   public int size()
   {
     return _data.size();
   }
+// calls get function from ArrayList
 
   public Integer get( int i )
   {
@@ -97,6 +102,7 @@ public class OrderedArrayList
     */
   }
 
+//helper method which searches
   public int binarySearch(ArrayList<Integer> arr,int startIndex, int endIndex, int target)
   {
     // base case:
@@ -119,54 +125,7 @@ public class OrderedArrayList
       // System.out.println("target is less than or equal to everything after it");
       return binarySearch(arr, startIndex, mid, target);
     }
-
-    
-  // if (endIndex-startIndex == 1) return startIndex;
-
-  // int mid = (startIndex + endIndex) / 2;
-  // System.out.println(arr.get(startIndex)+","+arr.get(endIndex-1));
-  // System.out.println(mid);
-  // if (target == arr.get(mid)) {
-  //   return mid;
-  // }
-  // if (target < arr.get(mid)){
-  //   return binarySearch(arr, startIndex, mid, target);
-  // }
-  // return binarySearch(arr, mid+1, endIndex, target);
-  
-
   }
-
-/*
-target: 4
-{0,1,2,3,5}
-diff: 3
-mid: 2
-4>mid:
-  {0,1,2,{3,5}}
-  diff: 1
-  mid:3
-  return 4 (expected 4)
-    
-
-target: 2
-{0,1,2,3,5}
-mid: 2
-2=mid:
-  return 2; (expected 2)
-  
-target: 2
-{0,1,2,3,5}
-mid: 2
-2<=mid:
-  {{0,1,2},3,5}
-  diff: 2
-  mid: 1
-  2>mid:
-    {0,1,{2},3,5}
-    mid=2
-
-*/
 
   // main method solely for testing purposes
   public static void main( String[] args )

@@ -11,3 +11,4 @@ DISCOS:
 QCC:
 * How can we make an object iterable?
 * How can we make our code more Robust?
+* We are currently running into an issue with the binary search, how much quicker is the binary search implementation?
