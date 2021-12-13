@@ -39,6 +39,9 @@ public class OrderedArrayList
     }
     return "{" + out.substring(1) + "}";
   }
+  public void add(int x){
+  addLinear(x);
+}
 // calls remove function from ArrayList
   public Integer remove( int i )
   {
@@ -157,12 +160,6 @@ public class OrderedArrayList
     for( int i = 0; i < 15; i++ ){
       Franz.addBinary( (int)( 50 * Math.random() ) );
     }
-
-    //bandaid fix
-    int last = Franz.get(Franz.size()-1);
-    Franz.remove(Franz.size()-1);
-    Franz.addBinary(last);
-
 
     System.out.println( Franz );
     /*-----v-------move-me-down-----------------v--------
