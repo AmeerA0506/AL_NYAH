@@ -19,7 +19,7 @@ We created an ArrayList of 23 random Integers and checked if it was in order. We
   - If the method is unable to insert, then the newElement is added to the end.
 - addBinary(int newElement() (commented out)
   - calls BinarySearch in an attempt to split apart the list in half in order to find the value greater than newElement. If not found, it looks in the other half.
-- BinarySearch(ArrayList arr, int start, int end, int target)
+- BinarySearch(ArrayList arr, int start, int end, int target) (commented out)
   - Recursively calls BinarySearch in order to find the target
 - toString()
   - returns a string representation of the ArrayList
